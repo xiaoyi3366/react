@@ -15,3 +15,15 @@ code {
 .red{
   color: red;
 }
+.header{
+  height: 80px;
+  background-color: #000;
+  
+}
+.header a{
+  margin-left: 50px;
+  float: left;
+  color:#fff;
+  font-size: 18px;
+  line-height: 80px;
+}

@@ -25,11 +25,17 @@ class Lifecycle1 extends Component {
         console.log('04刷新时候')
 
     }
-    
-    shouldComponentUpdate=()=>{
+    //有两个参数
+    shouldComponentUpdate=(nextProp,nextState)=>{
         // 是否要执行更新数据，返回true是
         console.log('11是否要更新数据')
+        console.log(nextProp);//执行父子组件传值，更新props时，打印更新后的数据{title: "我是父组件的title"}
+        console.log(nextState)//更新数据时，更新的数组{msg: "222改变222"}
         return true
+    }
+    //父子组件传值，父组件里面改变了props的值触发的方法
+    componentWillReceiveProps=()=>{
+        console.log('父子组件传值，父组件里面改变了props的值触发的方法');
     }
     //将要更新数据的时候触发
     componentWillUpdate=()=>{
@@ -48,7 +54,7 @@ class Lifecycle1 extends Component {
         console.log('13更新数据')
         return (
             <div>
-                生命周期函数演示-----{this.state.msg}
+                生命周期函数演示-----{this.state.msg}{this.props.title}
                 <br /><br />
                 <button onClick={this.updateData}>更新msg的数据</button>
             </div>
