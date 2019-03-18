@@ -31,14 +31,16 @@ class Home extends Component {
     render() {
         return (
             <div>
+                <Link to='/login'>登录</Link>
                 {
                     //循环二维数组
+                    // 执行循环代表list不为空，否则不执行
                     this.state.list.map((value,key)=>{
                         return(
                             <div className="item" key={key}>
                                 <h3 className="item_cate">{value.title}</h3>
                                 <ul className="item_list">
-                                    {
+                                    {   
                                         value.list.map((v,k)=>{
                                             return(
                                                 <li key={k}>	
