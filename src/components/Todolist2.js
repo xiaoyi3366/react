@@ -17,7 +17,7 @@ class Todolist2 extends Component{
             tempList.push({
                 title:e.target.value,
                 checked:false
-            })
+            })//返回的是索引值，所以不能直接写道setstate中
             this.setState({
                 list:tempList
             })
